@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo">
+            👨‍💼
+        </div>
+
+        <div>
+            <h1>Employee Management System</h1>
+
+            <p>
+                Manage your employees professionally
+            </p>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- Dashboard -->
+
+    <section class="dashboard">
+
+        <div class="dashboard-card">
+
+            <div class="icon blue">
+                👥
+            </div>
+
+            <div>
+                <h3>Total Employees</h3>
+                <p id="totalEmployees">0</p>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="icon green">
+                🏢
+            </div>
+
+            <div>
+                <h3>Departments</h3>
+                <p id="totalDepartments">0</p>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="icon purple">
+                💰
+            </div>
+
+            <div>
+                <h3>Total Salary</h3>
+                <p id="totalSalary">₹0</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Add Employee -->
+
+    <section class="form-card">
+
+        <h2>➕ Add Employee</h2>
+
+        <form id="employeeForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Employee Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+            >
+
+            <select id="department">
+
+                <option value="">
+                    Select Department
+                </option>
+
+                <option value="IT">IT</option>
+
+                <option value="HR">HR</option>
+
+                <option value="Finance">
+                    Finance
+                </option>
+
+                <option value="Marketing">
+                    Marketing
+                </option>
+
+                <option value="Sales">
+                    Sales
+                </option>
+
+            </select>
+
+
+            <input
+                type="text"
+                id="position"
+                placeholder="Position"
+            >
+
+            <input
+                type="number"
+                id="salary"
+                placeholder="Salary"
+            >
+
+            <input
+                type="date"
+                id="joining_date"
+            >
+
+            <button type="submit">
+                Add Employee
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Employee List -->
+
+    <section class="employee-card">
+
+        <div class="section-title">
+
+            <h2>👥 Employee List</h2>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="🔍 Search employee..."
+            >
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Employee</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>Department</th>
+
+                        <th>Position</th>
+
+                        <th>Salary</th>
+
+                        <th>Joining Date</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="employeeTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
